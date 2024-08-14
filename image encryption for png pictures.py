@@ -1,7 +1,7 @@
 from PIL import Image
 
 def encryption_decryption():
-    key =100
+    key =input("enter your key between 1-255:\n don't enter wrong image can't recover")
     new_img = Image.new(img.mode, img.size)
     width, height = img.size
     for x in range(width):
