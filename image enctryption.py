@@ -42,17 +42,25 @@ def decrypt_image(image_path, output_path, key):
 
     # Save the decrypted image
     image.save(output_path)
-
 # Input from user
-image_path = input("Enter the path of the image to encrypt: ")
-output_path_encrypted = "encrypted_image.png"
-output_path_decrypted = "decrypted_image.png"
 key = int(input("Enter the encryption key (integer): "))
+def image_encryption(): 
+    image_path = input("Enter the path of the image to encrypt: ")
+    output_path_encrypted = "encrypted_image.png"#here we can change the file destination
+    encrypt_image(image_path, output_path_encrypted, key) # Encrypt the image
+    print(f"Encrypted image saved as {output_path_encrypted}")
+def image_decrypt():
+    image_path = input("Enter the path of the image to decrypt: ")
+    output_path_decrypted = "decrypted_image.png" #here we can change the file destination
+    encrypt_image(image_path, output_path_decrypted, -key) # Encrypt the image
+    print(f"Encrypted image saved as {output_path_decrypted}")
 
-# Encrypt the image
-encrypt_image(image_path, output_path_encrypted, key)
-print(f"Encrypted image saved as {output_path_encrypted}")
-
-# Decrypt the image
-decrypt_image(output_path_encrypted, output_path_decrypted, key)
-print(f"Decrypted image saved as {output_path_decrypted}")
+choise=input("\n1.encrypt \n2.decrypt \n3.exit \nEnter your choise :")
+if choise == '1':
+    image_encryption()
+elif choise == '2':
+    image_decrypt()
+elif choise == '3':
+  exit
+else:
+  print("\nIncorrect Choise, Try Again\n")
