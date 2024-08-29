@@ -2,5 +2,5 @@
 
 -python based image encryption program
 
--check path before execution 
+-check path of image before execution 
 
